@@ -92,11 +92,18 @@ header{
 article{
   padding: 5em;
   padding-bottom: 0;
+  @include Mobile{
+    padding: 1em;
+  }
   .intro{
     img{
       content: url(../images/desktop/image-interactive.jpg);
       width: 60%;
       max-width: 800px;
+      @include Mobile{
+        content: url(../images/mobile/image-interactive.jpg);
+        width: 100%;
+      }
     }
     div{
       position: relative;
@@ -107,6 +114,12 @@ article{
       left: 39%;
       padding: 2em 3em 0 3em;
       background: white;
+      @include Mobile{
+        position: static;
+        width: 90%;
+        padding: 1em;
+        text-align: center;
+      }
       h3{
         font-size: 2em;
         letter-spacing: 2px;
@@ -117,42 +130,180 @@ article{
       }
     }
   }
-  .unit{
-    border: yellowgreen 1px solid;
-    h2{
-      font-size: 2em;
+  .all_archive{
+    position: relative;
+    top: -150px;
+    @include Mobile{
+      position: static;
     }
-    button{
-      border: black solid 2px;
-      background: none;
-      padding: .5em 1em;
-      letter-spacing: .2em;
+    .all_archive_title{
+      display: flex;
+      justify-content: space-between;
+      margin: 2.5em;
+      h2{
+        font-size: 2em;
+      }
+      button{
+        border: black solid 2px;
+        background: none;
+        padding: .5em 1em;
+        letter-spacing: .2em;
+        height: 50px;
+        align-self: center;
+        &:hover{
+          background: black;
+          color: white;
+        }
+        @include Mobile{
+          visibility: hidden;
+          position: absolute;
+        }
+      }
+    }
+    .archive{
+      display: flex;
+      justify-content: space-around;
+      @include Mobile{
+        display: flex;
+        flex-flow: column;
+      }
+      div{
+        &:hover{
+          h4{
+            color: black;
+          }
+        }
+        h4{
+          position: relative;
+          top: -130px;
+          left: 40px;
+          height: 0;
+          width: 130px;
+          margin: 0;
+          font-size: 2em;
+          font-family: 'Josefin+Sans';
+          color: white;
+          font-weight: 300;
+        }
+        img{
+          margin: 10px;
+          @include Mobile{
+            width: 95%;
+          }
+        }
+        .img-1{
+          content: url(../images/desktop/image-deep-earth.jpg);
+          @include Mobile{
+            content: url(../images/mobile/image-deep-earth.jpg);
+          }
+        }
+        .img-2{
+          content: url(../images/desktop/image-night-arcade.jpg);
+          @include Mobile{
+            content: url(../images/mobile/image-night-arcade.jpg);
+          }
+        }
+        .img-3{
+          content: url(../images/desktop/image-soccer-team.jpg);
+          @include Mobile{
+            content: url(../images/mobile/image-soccer-team.jpg);
+          }
+        }
+        .img-4{
+          content: url(../images/desktop/image-grid.jpg);
+          @include Mobile{
+            content: url(../images/mobile/image-grid.jpg);
+          }
+        }
+        .img-5{
+          content: url(../images/desktop/image-from-above.jpg);
+          @include Mobile{
+            content: url(../images/mobile/image-from-above.jpg);
+          }
+        }
+        .img-6{
+          content: url(../images/desktop/image-pocket-borealis.jpg);
+          @include Mobile{
+            content: url(../images/mobile/image-pocket-borealis.jpg);
+          }
+        }
+        .img-7{
+          content: url(../images/desktop/image-curiosity.jpg);
+          @include Mobile{
+            content: url(../images/mobile/image-curiosity.jpg);
+          }
+        }
+        .img-8{
+          content: url(../images/desktop/image-fisheye.jpg);
+          @include Mobile{
+            content: url(../images/mobile/image-fisheye.jpg);
+          }
+        }
+      }
+      .archive-4{
+        h4{
+          width: 100px;
+        }
+      }
+      .archive-5{
+        h4{
+          width: 140px;
+        }
+      }
+    }
+  }
+}
+footer{
+  padding: 2em 3em;
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  p{
+    margin: 0;
+  }
+  .link{
+    h2{
+      margin: 0;
     }
     div{
-      h4{}
-      .img-1{
-        content: url(../images/desktop/image-deep-earth.jpg);
+      display: flex;
+      h5{
+        margin-right: 1em;
+        margin-bottom: 0;
       }
-      .img-2{
-        content: url(../images/desktop/image-night-arcade.jpg);
+    }
+  }
+  .icon{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    div{
+      img{
+        margin-left: 1em;
       }
-      .img-3{
-        content: url(../images/desktop/image-soccer-team.jpg);
+    }
+    color: $gray;
+  }
+  @include Mobile{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    .link{
+      div{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
       }
-      .img-4{
-        content: url(../images/desktop/image-grid.jpg);
+    }
+    .icon{
+      align-items: center;
+      div{
+        margin: 20px 20px 20px 0;
       }
-      .img-5{
-        content: url(../images/desktop/image-from-above.jpg);
-      }
-      .img-6{
-        content: url(../images/desktop/image-pocket-borealis.jpg);
-      }
-      .img-7{
-        content: url(../images/desktop/image-curiosity.jpg);
-      }
-      .img-8{
-        content: url(../images/desktop/image-fisheye.jpg);
+      p{
+        text-align: center;
       }
     }
   }
