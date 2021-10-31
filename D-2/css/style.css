@@ -84,6 +84,10 @@ header .square {
 }
 
 article {
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  align-items: center;
   padding: 5em;
   padding-bottom: 0;
 }
@@ -96,6 +100,7 @@ article .intro img {
   content: url(../images/desktop/image-interactive.jpg);
   width: 60%;
   max-width: 800px;
+  margin-left: 5%;
 }
 @media (max-width: 375px) {
   article .intro img {
@@ -109,7 +114,7 @@ article .intro div {
   min-width: 300px;
   word-break: keep-all;
   top: -200px;
-  left: 39%;
+  right: -40%;
   padding: 2em 3em 0 3em;
   background: white;
 }

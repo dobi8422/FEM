@@ -4,7 +4,6 @@
 // white
 //black
 $gray: hsl(0, 0%, 55%);
-$dark_gray: hsl(0, 0%, 41%);
 
 @mixin Desktop {
   @media (max-width: 1440px) {
@@ -90,6 +89,10 @@ header{
   }
 }
 article{
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  align-items: center;
   padding: 5em;
   padding-bottom: 0;
   @include Mobile{
@@ -100,6 +103,7 @@ article{
       content: url(../images/desktop/image-interactive.jpg);
       width: 60%;
       max-width: 800px;
+      margin-left: 5%;
       @include Mobile{
         content: url(../images/mobile/image-interactive.jpg);
         width: 100%;
@@ -111,7 +115,7 @@ article{
       min-width: 300px;
       word-break: keep-all;
       top: -200px;
-      left: 39%;
+      right: -40%;
       padding: 2em 3em 0 3em;
       background: white;
       @include Mobile{
